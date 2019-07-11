@@ -12,19 +12,23 @@
 
 
 <style>
-    body,
-    ul {
+    body,ul
+    {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 
     #all {
-        width: 1980px;
-        height: 300vh;
+        max-width: 1980px;
+        width: 100%;
+        height: auto;
         margin: 0 auto;
     }
 
     header {
+        max-width: 1980px;
+        width: 100%;
         background: #eee;
         height: 100vh;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -33,6 +37,7 @@
     }
 
     #swiper {
+        max-width: 1980px;
         width: 100%;
         height: calc(100vh - 150px);
     }
@@ -71,25 +76,37 @@
         align-items: center;
         background-position: center center;
         background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .swiper-slide1 {
-        width: 1200px;
         background-image: url(img/slide1.jpg);
-        background-size: cover;
 
     }
 
     nav {
+        max-width: 1980px;
         width: 100%;
         height: 150px;
         background-color: rgb(33, 122, 224);
     }
-
-    li{
-        display:inline;
+    .nav-ul{
+        max-width: 1200px;
+        width: 100%;
+        height: 150px;
         margin: 0 auto;
-        border: 1px solid #000;
+        padding-left: 10%;
+    }
+
+    .nav-ul li{
+        width: 20%;
+        height: 80px;
+        background-color: rgb(230, 230, 230);
+        display:inline-block;
+        text-align: center;
+        line-height: 80px;
+        margin-top: 35px;
+        
     }
 
     section {
@@ -200,7 +217,7 @@
                 </div>
             </div>
             <nav>
-                <ul>
+                <ul class="nav-ul">
                     <li>STORY</li>
                     <li>NEWS</li>
                     <li>訪談</li>
