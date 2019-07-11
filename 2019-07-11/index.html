@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+<link rel="stylesheet" href="../dist/css/swiper.min.css">
+
+
+<style>
+    body,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    #all {
+        width: 1980px;
+        height: 300vh;
+        margin: 0 auto;
+    }
+
+    header {
+        background: #eee;
+        height: 100vh;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 40px;
+        color: #000;
+    }
+
+    #swiper {
+        width: 100%;
+        height: calc(100vh - 150px);
+    }
+
+    .swiper-title-img {
+        width: 555px;
+        height: 264px;
+        background-image: url(img/swiper-title.png);
+        margin: 0 auto;
+        float: left;
+
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .swiper-slide1 {
+        width: 1200px;
+        background-image: url(img/slide1.jpg);
+        background-size: cover;
+
+    }
+
+    nav {
+        width: 100%;
+        height: 150px;
+        background-color: rgb(33, 122, 224);
+    }
+
+    li{
+        display:inline;
+        margin: 0 auto;
+        border: 1px solid #000;
+    }
+
+    section {
+        width: 1200px;
+        margin: 0 auto;
+
+    }
+
+    .story {
+        width: calc(100% - 80px);
+        height: auto;
+        background-image: url(img/story-bg.jpg);
+        margin: 0 auto;
+        padding: 40px;
+        text-align: center;
+        text-align: justify;
+        text-justify: inter-ideograph;
+    }
+
+    h1{
+        font-size: 55px;
+        text-align: center;
+    }
+
+    p {
+        font-family: 'Microsoft JhengHei', serif;
+        line-height: 2.5;
+        padding-bottom: 1.2em;
+    }
+
+    .news {
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+
+    }
+    .newsL{
+        border: 1px solid #000;
+        width: 40%;
+        height: auto;
+        float: left;
+    }
+    .newsp{
+        font-size: 17px;
+        line-height: 2px;
+    }
+    .newsR{
+        border: 1px solid #000;
+        width: 40%;
+        float: right;
+    }
+    .interviewL ,.interviewR{
+        float: left;
+        border: 1px solid #000;
+    }
+ 
+    .staff {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #000;
+    }
+    .staff1 ,.staff2 ,.staff3{
+        width: 30%;
+        height: 20px;
+        border: 1px solid #000;
+    }
+    .staff1{
+        float: left;
+        margin-right: 5%;
+    }
+    .staff2{
+        float: left;
+    }
+    .staff3{
+        float: right;
+    }
+
+    .interview{
+        width: 100%;
+        height: 1000px;
+        border: 1px solid #000;
+    }
+
+   
+</style>
+</head>
+
+<body>
+    <div id="all">
+        <header>
+            <div id="swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide1">
+
+                        </div>
+                        <div class="swiper-slide swiper-slide2">
+                            <div class="swiper-title-img"></div>
+                        </div>
+                        <div class="swiper-slide swiper-slide3">
+                            <div class="swiper-title-img"></div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li>STORY</li>
+                    <li>NEWS</li>
+                    <li>訪談</li>
+                    <li>STAFF</li>
+                </ul>
+            </nav>
+            <section>
+                <div class="story">
+                    <h1>STORY</h1>
+                    <p>
+                        本片是以「世界氣候異常」為主題。
+                        描述在氣候異常變遷的時代裡，被命運捉弄的少年和少女的愛情故事。
+                        離家出走的高中生森島高帆，在東京邂逅了能以祈禱操控天氣的少女天野陽菜。
+                    </p>
+                    <p>
+                        高一那年夏天，高帆離開位在離島的家鄉，獨自一人來到東京，拮据的生活迫使他不得不找份工作，最後來到一間專門出版奇怪超自然刊物的出版社擔任寫手。
+                        不久，東京開始下起連日大雨，彷彿暗示著高帆不順遂的未來，在這座繁忙城市裡到處取材的高帆邂逅了與弟弟相依為命，不可思議的美少女陽菜。 
+                    </p> 
+                    <p>
+                            「等等就會放晴了喔。」陽菜這樣告訴著高帆，不久，頭頂的烏雲逐漸散去，耀眼的陽光灑落街道……
+                            原來，陽菜擁有「改變天氣」的奇妙能力……。
+                    </p>
+                </div>
+                <div class="news">
+                    <div class="newsL">
+                        <p class="newsp">12.13『天気の子』製作発表！</p>
+                        <p class="newsp">4.10今作の音楽を担当するのはRADWIMPS！予告篇解禁！</p>
+                        <p class="newsp">5.24メディア情報</p>
+                        <p class="newsp">5.29新ビジュアル解禁！予報第２弾公開！！</p>
+                        <p class="newsp">5.29豪華キャスト陣が発表！</p>
+                        <p class="newsp">5.29#わたしの天気の子予報！Twitterキャンペーン実施中</p>
+                        <p class="newsp">5.29上映劇場が決定！</p>
+                        <p class="newsp">7.4 映画「天気の子」のバリアフリー上映が決定しました！</p>
+                    </div>
+                    <div class="newsR">
+                        右
+                    </div>
+                </div>
+                <div class="interview">
+                        <div class="interviewL">新海誠</div>
+                        <div class="interviewR">RADWIMP</div>
+                </div>
+                <div class="staff">
+                    <div class="staff1"></div>
+                    <div class="staff2"></div>
+                    <div class="staff3"></div>
+                </div>
+    </div>
+    </section>
+    <footer></footer>
+
+    </div>
+    </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="../dist/js/swiper.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>
