@@ -62,17 +62,8 @@
         text-align: center;
         font-size: 18px;
         background: #fff;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
         display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
         justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
         align-items: center;
         background-position: center center;
         background-repeat: no-repeat;
@@ -86,13 +77,11 @@
 
     nav {
         max-width: 1980px;
-        width: 100%;
         height: 150px;
         background-color: rgb(33, 122, 224);
     }
     .nav-ul{
         max-width: 1200px;
-        width: 100%;
         height: 150px;
         margin: 0 auto;
         padding-left: 10%;
@@ -106,7 +95,6 @@
         text-align: center;
         line-height: 80px;
         margin-top: 35px;
-        
     }
 
     section {
@@ -167,42 +155,46 @@
         width: 100%;
         height: auto;
         margin: 0 auto 30px auto;
+        box-sizing: border-box;
+    }
+    .interview-title{
+        margin: 0 auto;
     }
 
-    .interviewL ,.interviewR ,.interviewM{
+    .interviewL ,.interviewR {
         float: left;
-        margin: 50px;
+        text-align: center;
     }
     .interviewL{
-        background-image: url()
-    }
-    .interviewM{
-        background-image: url();
-        margin: 30 auto;
+        width: 50%;
+        
     }
     .interviewR{
-        background-image: url()
+        width: 50%;
     }
  
     .staff {
         width: 100%;
-        height: 500px;
-        border: 1px solid #000;
+        height: 400px;
+        float: left;
     }
     .staff1 ,.staff2 ,.staff3{
-        width: 30%;
-        height: 20px;
-        border: 1px solid #000;
+        width: 20%;
+        height: 200px;
+        float: left;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
     }
     .staff1{
-        float: left;
-        margin-right: 5%;
+        background-image: url(img/staff1.jpg);
     }
     .staff2{
-        float: left;
+        background-image: url(img/staff2.jpg);
     }
     .staff3{
-        float: right;
+        background-image: url(img/staff3.jpg);
     }
 
     footer{
@@ -248,7 +240,7 @@
                 <ul class="nav-ul">
                     <li>STORY</li>
                     <li>NEWS</li>
-                    <li>訪談</li>
+                    <li>Interview</li>
                     <li>STAFF</li>
                 </ul>
             </nav>
@@ -284,14 +276,14 @@
                     </div>
                 </div>
                 <div class="interview">
+                        <h1>Interview</h1>
                         <div class="interviewL">新海誠</div>
-                        <div class="interviewM">訪談</div>
                         <div class="interviewR">RADWIMP</div>
                 </div>
                 <div class="staff">
-                    <div class="staff1"></div>
-                    <div class="staff2"></div>
-                    <div class="staff3"></div>
+                    <div class="staff1">新海誠</div>
+                    <div class="staff2">RADWIMP</div>
+                    <div class="staff3">CV</div>
                 </div>
     </div>
     </section>

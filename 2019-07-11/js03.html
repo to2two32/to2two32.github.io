@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #all{
+            max-width: 600px;
+            width: 100%;
+        }
+        .top-section{
+            width: 100%;
+        }
+
+        .top-img img{
+            width: 100%;
+        }
+
+        .btn-section{
+            width: 100%;
+            display: flex;
+        }
+        .btn-img{
+            width: 25%;
+            padding: 5px;
+            height: 50px;
+        }
+        .btn-img img{
+            width: 100%;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="top-section">
+            <div class="top-img">
+                <img id=img-b src="img/slide1.jpg" alt="">
+            </div>
+        </div>
+        <div class="btn-section">
+            <div class="btn-img">
+                <img id=img-s1 src="img/slide1.jpg" alt="">
+            </div>
+            <div class="btn-img">
+                <img id=img-s2 src="img/image2.jpg" alt="">
+            </div>
+            <div class="btn-img">
+                <img id=img-s3 src="img/image10.jpg" alt="">
+            </div>
+            <div class="btn-img">
+                <img id=img-s4 src="img/image11.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var img_b = document.querySelector("#img-b");
+        var img_s1 = document.querySelector("#img-s1");
+        var img_s2 = document.querySelector("#img-s2");
+        var img_s3 = document.querySelector("#img-s3");
+        var img_s4 = document.querySelector("#img-s4");
+
+        img_s1.onclick = function(){
+            // console.log(1);
+            img_b.src = "img/slide1.jpg";     
+        }
+        img_s2.onclick = function(){
+            // console.log(2);
+            img_b.src = "img/image2.jpg";  
+        }
+        img_s3.onclick = function(){
+            // console.log(2);
+            img_b.src = "img/image10.jpg";  
+        }
+        img_s4.onclick = function(){
+            // console.log(2);
+            img_b.src = "img/image11.jpg";  
+        }
+
+
+
+    </script>
+</body>
+</html>
