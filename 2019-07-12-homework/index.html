@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #all{
+            max-width: 1980px;
+            height: auto;
+        }
+        .tab{
+            max-width: 1024px;
+        }
+        .tab button{
+            width: 25%;
+            height: 100px;
+            float: left;
+            background-color: rgb(207, 207, 207);
+        }
+        .tab button:hover{
+            background-color: darkgray;
+        }
+
+        .section{
+            max-width: 1024px;
+            width: 100%;
+            height: 640px;
+            float: left;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        #section1{
+            background-image: url(img/img-1.jpg);
+        }
+
+        #section2{
+            background-image: url(img/img-2.jpg);
+        }
+
+        #section3{
+            background-image: url(img/img-3.jpg);
+        }
+
+        #section4{
+            background-image: url(img/img-4.jpg);
+        }
+
+        /* 顯示section */
+        .show{
+            display: block;
+        }
+        
+        /* 隱藏section */
+        .hidden{
+            display: none;
+        }
+
+        @media (max-width:767px){
+            .tab button{
+                width: 50%;
+                height: 50px;
+                float: left;
+                background-color: rgb(207, 207, 207);
+            }
+        }
+
+        @media (max-width:375px){
+            .tab button{
+                width: 100%;
+                height: 50px;
+                float: left;
+                background-color: rgb(207, 207, 207);
+            }
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="tab">
+            <button id="btn1" class="btn" onclick="btn_1()">第一頁</button>
+            <button id="btn2" class="btn" onclick="btn_2()">第二頁</button>
+            <button id="btn3" class="btn" onclick="btn_3()">第三頁</button>
+            <button id="btn4" class="btn" onclick="btn_4()">第四頁</button>
+        </div>
+        <div id="section1" class="section show">
+            <h1></h1>
+            <p></p>
+        </div>
+        <div id="section2" class="section hidden">
+            <h1></h1>
+            <p></p>
+        </div>
+        <div id="section3" class="section hidden">
+            <h1></h1>
+            <p></p>
+        </div>
+        <div id="section4" class="section hidden">
+            <h1></h1>
+            <p></p>
+        </div>        
+    </div>
+    
+    <script>
+
+        // 先定義變數，對all-section作隱藏設定
+        var section1 = document.querySelector("#section1")
+        var section2 = document.querySelector("#section2")
+        var section3 = document.querySelector("#section3")
+        var section4 = document.querySelector("#section4")
+        var btn = document.querySelector(".btn")
+        var btn1 = document.querySelector("#btn1")
+        var btn2 = document.querySelector("#btn2")
+        var btn3 = document.querySelector("#btn3")
+        var btn4 = document.querySelector("#btn4")
+
+
+        // 把section先全部隱藏後，只顯示指定的section，觸發事件的是btn，改變的是section
+        function btn_1(){
+            hidden_all();
+            section1.classList.remove('hidden');
+            section1.classList.add('show');
+            btn1.style.backgroundColor = "rgb(126, 126, 126)";
+        }
+
+        function btn_2(){
+            hidden_all();
+            section2.classList.remove('hidden');
+            section2.classList.add('show');
+            btn2.style.backgroundColor = "rgb(126, 126, 126)";
+        }
+
+        function btn_3(){
+            hidden_all();
+            section3.classList.remove('hidden');
+            section3.classList.add('show');
+            btn3.style.backgroundColor = "rgb(126, 126, 126)";
+        }
+
+        function btn_4(){
+            hidden_all();
+            section4.classList.remove('hidden');
+            section4.classList.add('show');
+            btn4.style.backgroundColor = "rgb(126, 126, 126)";
+        }
+
+            // 設定一組函數,把section先全部隱藏（利用增/刪class名稱在css作變更）
+        function hidden_all(){
+            section1.classList.remove('show');
+            section1.classList.add('hidden');
+            section2.classList.remove('show');
+            section2.classList.add('hidden');
+            section3.classList.remove('show');
+            section3.classList.add('hidden');
+            section4.classList.remove('show');
+            section4.classList.add('hidden');
+            btn1.style.backgroundColor = "rgb(207, 207, 207)";
+            btn2.style.backgroundColor = "rgb(207, 207, 207)";
+            btn3.style.backgroundColor = "rgb(207, 207, 207)";
+            btn4.style.backgroundColor = "rgb(207, 207, 207)";
+        }
+    </script>
+</body>
+</html>
