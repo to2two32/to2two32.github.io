@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #card {
+      max-width: 400px;
+
+    }
+
+    .nav {
+      width: 100%;
+      height: 150px;
+      background-color: rgb(100, 144, 211);
+      display: flex;
+      flex-direction: s
+    }
+    H1{
+      font-size: 50px;
+    }
+    .climatic p{
+      font-size: 25px;
+    }
+    .navL{
+      padding: 20px;
+    }
+    .navR{
+      font-size: 30px;
+      padding-top: 30px;
+    }
+
+    .nav .navR,.navL{
+      float: left;
+    }
+
+    #section {
+      width: 100%;
+      height: auto;
+      background-color: rgb(69, 219, 157);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="card">
+    <nav class="nav">
+      <div class="navL">
+        <div class="city">
+          <H1>彰化</H1>
+        </div>
+        <div class="climatic">
+          <P class="p-climatic"></P>
+        </div>
+      </div>
+      <div class="navR">
+        <div class="date">2019/07/16(二)</div>
+        <div class="time">12:00~18:00</div>
+      </div>
+    </nav>
+    <!-- 溫度/降雨機率/紫外線 -->
+    <section id="section">
+      <p class="p-text"></p>
+    </section>
+
+  </div>
+
+  <script>
+
+    var locations = [];
+
+    fetch('https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-D0047-091?Authorization=CWB-B5282D9D-8FDD-40E9-AD48-B1DF3270465D&format=JSON')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        locations = myJson.cwbopendata.dataset.locations.location;
+        console.log(myJson);
+        // 平均溫度
+        var temperature = locations[5].weatherElement[0].time[0].elementValue.value
+        //降雨機率
+        var pop = locations[5].weatherElement[9].time[0].elementValue.value
+        //天氣狀況
+        var climatic = locations[5].weatherElement[12].time[0].elementValue[0].value
+        //紫外線指數
+        var UV_index = locations[5].weatherElement[13].time[0].elementValue[1].value
+
+        var p_climatic = document.querySelector(".p-climatic");
+        var p_text = document.querySelector(".p-text");
+
+        p_text.innerHTML = `
+          平均溫度:${temperature}℃
+          降雨機率:${pop}%
+          紫外線指數:${UV_index}
+        `;
+
+        p_climatic.innerHTML = `
+          ${climatic}
+        `;
+      });
+  </script>
+</body>
+
+</html>

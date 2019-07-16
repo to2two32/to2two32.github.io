@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <STyle>
+
+        .img{
+            max-width:600px; 
+        }
+
+        h1{
+
+        }
+
+        p{
+
+        }
+
+    </STyle>
+<body>
+    <div id="all">
+        <div>
+            <img class="img" src="" alt="">
+        </div>
+        <div class="section">
+            <h1 class="title">商品內容</h1>
+            <p class="section-text"></p>
+        </div>
+    </div>
+    
+    <script>
+
+        var img = document.querySelector(".img")
+        var title = document.querySelector(".title")
+        var section_text = document.querySelector(".section-text")
+
+        var wallet = {
+            name: "wallet",
+            img : "img/img-01.jpg",
+            color: "red",
+            size: "big",
+            price: 1900,
+            made: "CH",
+            date: 2018-07
+        }
+
+        img.src = wallet.img;
+        title.innerHTML = wallet.name;
+        section_text.innerHTML = "顏色";
+    
+    </script>
+</body>
+</html>

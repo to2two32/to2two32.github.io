@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #all {
+            max-width: 1980px;
+            height: auto;
+        }
+
+        .tab {
+            max-width: 1024px;
+        }
+
+        .tab button {
+            width: 25%;
+            height: 100px;
+            float: left;
+            background-color: rgb(207, 207, 207);
+        }
+
+        .tab button:hover {
+            background-color: darkgray;
+        }
+
+        .section {
+            max-width: 1024px;
+            width: 100%;
+            height: 640px;
+            float: left;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        #section1 {
+            background-image: url(img/img-1.jpg);
+        }
+
+        #section2 {
+            background-image: url(img/img-2.jpg);
+        }
+
+        #section3 {
+            background-image: url(img/img-3.jpg);
+        }
+
+        #section4 {
+            background-image: url(img/img-4.jpg);
+        }
+
+
+
+        /* 顯示section */
+        .show {
+            display: block;
+        }
+
+        /* 隱藏section */
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width:767px) {
+            .tab button {
+                width: 50%;
+                height: 50px;
+                float: left;
+                background-color: rgb(207, 207, 207);
+            }
+        }
+
+        @media (max-width:375px) {
+            .tab button {
+                width: 100%;
+                height: 50px;
+                float: left;
+                background-color: rgb(207, 207, 207);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <div class="tab">
+            <button id="btn1" class="btn">背景一</button>
+            <button id="btn2" class="btn">背景二</button>
+            <button id="btn3" class="btn">背景三</button>
+            <button id="btn4" class="btn">背景四</button>
+        </div>
+        <div id="section1" class="section show">
+            <h1>概要</h1>
+            <p>作品是minori的第6部作品，也是在繼取得成功的《ef - a fairy tale of the
+                two.》之後的作品。在本作中，原作和腳本完全由鏡遊負責；而在前作中和鏡遊一起負責原作和腳本的御影則負責監督。在minori多部作品中負責人物設定和原畫的七尾奈留則沒有參與製作，改由ちこたむ、KIMちー負責。
+            </p>
+        </div>
+        <div id="section2" class="section hidden">
+            <h1>概要</h1>
+            <p>作品是minori的第6部作品，也是在繼取得成功的《ef - a fairy tale of the
+                two.》之後的作品。在本作中，原作和腳本完全由鏡遊負責；而在前作中和鏡遊一起負責原作和腳本的御影則負責監督。在minori多部作品中負責人物設定和原畫的七尾奈留則沒有參與製作，改由ちこたむ、KIMちー負責。
+            </p>
+        </div>
+        <div id="section3" class="section hidden">
+            <h1>概要</h1>
+            <p>作品是minori的第6部作品，也是在繼取得成功的《ef - a fairy tale of the
+                two.》之後的作品。在本作中，原作和腳本完全由鏡遊負責；而在前作中和鏡遊一起負責原作和腳本的御影則負責監督。在minori多部作品中負責人物設定和原畫的七尾奈留則沒有參與製作，改由ちこたむ、KIMちー負責。
+            </p>
+        </div>
+        <div id="section4" class="section hidden">
+            <h1>概要</h1>
+            <p>作品是minori的第6部作品，也是在繼取得成功的《ef - a fairy tale of the
+                two.》之後的作品。在本作中，原作和腳本完全由鏡遊負責；而在前作中和鏡遊一起負責原作和腳本的御影則負責監督。在minori多部作品中負責人物設定和原畫的七尾奈留則沒有參與製作，改由ちこたむ、KIMちー負責。
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var section = document.querySelectorAll(".section");
+        var btn = document.querySelectorAll(".btn")
+
+
+        for (let i = 0; i < section.length; i++) {
+            const section_switch = section[i];
+            const btn_on = btn[i];
+
+            btn_on.onclick = function () {
+                hidden_all();
+                section_switch.classList.remove('hidden');
+                section_switch.classList.add('show');
+                btn_on.style.backgroundColor = "rgb(126, 126, 126)";
+            }
+        }
+
+
+        function hidden_all() {
+            for (let i = 0; i < section.length; i++) {
+                const section_switch = section[i];
+                const btn_color = btn[i];
+                section_switch.classList.remove('show');
+                section_switch.classList.add('hidden');
+                btn_color.style.backgroundColor = "rgb(207, 207, 207)";  
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
