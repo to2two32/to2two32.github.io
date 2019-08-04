@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eden*</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+    <link rel="stylesheet" href="css/navbarAndFooter.css">
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+              box-sizing:border-box;
+              overflow-x: hidden;
+            }
+
+ 
+
+
+        /* story-開始 */
+        #eden-header{
+            height: 100vh;
+            max-height: 900px;
+            overflow-x: hidden;
+        }
+
+        ul{
+        position: absolute;
+        right: 50px;
+        top: 100px;
+        z-index: 12;
+        }
+
+        li{
+            width: auto;
+            height: auto;
+            list-style-type: none;
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 18px;
+        }
+
+
+        #eden-header {
+            max-width: 1440px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+
+        .header-panel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .header-panel1 {
+            width: 100%;
+            background-image: url(img/header-panel1.jpg);
+            z-index: 10;
+        }
+
+        .header-panel2 {
+            width: 100%;
+            background-image: url(img/header-panel2.jpg);
+            z-index: 10;
+        }
+
+
+        .swiper-container {
+            position: absolute;
+             width: 100%;
+             max-width: 1440px;
+             height: 100%;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+
+        #story-all{
+            margin-top: 100vh;
+            widows: 100%;
+            height: 100vh;
+        }
+
+        h1{
+            line-height: 100vh;
+            text-align: center;
+        }
+
+        .story-panel {
+            position: absolute;
+            width: 100%;
+            height: 35%;
+            background-color: black;
+            z-index: 10;
+        }
+
+        .story-panel1 {
+            width: 100%;
+            z-index: 10;
+            top: 100%;
+        }
+
+        .story-panel2 {
+            width: 100%;
+            z-index: 10;
+            top: 170%;
+        }
+
+        #eden-story{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            background-image: url(img/story-bg.png);
+        }
+
+        #eden-story h1{
+            animation-name: pulse;
+            animation-iteration-count: infinite;
+            animation-duration: 500;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                transform: scale3d(1.5, 1.5, 1.5);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);            
+            }
+        }
+
+
+    </style>
+<body>
+    <div id="eden-all">
+        <header id="eden-header">
+
+                <div class="header-panel header-panel1"></div>
+                <div class="header-panel header-panel2"></div>
+                        <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="menu">
+                                        <ul>
+                                            <li class="li" data-eden="1">eden*</li>
+                                            <li class="li" data-eden="1">故事</li>
+                                            <li class="li" data-eden="1">人物介紹</li>
+                                            <li class="li" data-eden="1">商品資訊</li>
+                                            <li class="li" data-eden="1">更多資訊</li>
+                                        </ul>
+                                    </div>
+                                  <div class="swiper-slide">
+                                      <img src="img/header-panel1.jpg" alt="">
+                                </div>
+
+                                  <div class="swiper-slide">
+                                        <div class="swiper-slide"><img src="img/header-panel2.jpg" alt="">
+                                  </div>
+
+                                </div>
+                              </div>       
+        </header>
+
+        <section>
+            <div id="story-all">
+                    <div class="story-panel story-panel1"></div>
+                    <div class="story-panel story-panel2"></div>
+                <div id="eden-story">
+                    <h1>Plot</h1>
+   
+                </div>
+            </div>
+
+            <div id="actor-all">
+                <div id="eden-actor">
+         
+                </div>
+            </div>
+        </section>
+        <footer>
+            
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+   <!-- 首頁相關 -->
+   <script>
+    //    動畫
+        let wipeAnimation = new TimelineMax();
+        wipeAnimation.fromTo(".header-panel2", 1.8, { x:"-100%" }, { x:"100%", ease: Linear.easeNone })
+        .fromTo(".header-panel1", 1.8, { x:"-150%" }, {opacity: 0,x:"0%", ease: Linear.easeNone }, "-=0.9")
+        .from(".swiper-slide", 0.1, { opacity: 0 }, "+=0.4")
+        .from(".menu li", 1, { opacity: 0, x: 100 }, "+=0.4")
+
+        // Swiper
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            },
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+         });
+
+        //  連結
+        $(".li").onclick(function() {   
+        $('html, body').animate({
+        scrollTop: (1000)
+        }, 2000);
+        });
+    </script>
+
+    <script>
+    
+    </script>
+</body>
+</html>
