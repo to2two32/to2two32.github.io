@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
-    <link rel="stylesheet" href="css/navbarAndFooter.css">
 </head>
 <style>
     * {
@@ -320,8 +319,7 @@
 
 <body>
     <div id="eden-all">
-        <header id="eden-header">
-
+        <header id="eden-header" class="transfer" data-edenid="1">
             <div class="header-panel header-panel1"></div>
             <div class="header-panel header-panel2"></div>
             <div class="swiper-container">
@@ -331,11 +329,11 @@
                     </div>
                     <div class="menu">
                         <ul>
-                            <li class="li" data-eden="1">eden*</li>
-                            <li class="li" data-eden="1">故事</li>
-                            <li class="li" data-eden="1">人物介紹</li>
-                            <li class="li" data-eden="1">商品資訊</li>
-                            <li class="li" data-eden="1">更多資訊</li>
+                            <li class="li1" data-eden="1">eden*</li>
+                            <li class="li2" data-eden="2">Story</li>
+                            <li class="li3" data-eden="3">人物介紹</li>
+                            <li class="li4" data-eden="4">商品資訊</li>
+                            <li class="li5" data-eden="5">更多資訊</li>
                         </ul>
                     </div>
                     <div class="swiper-slide">
@@ -351,7 +349,7 @@
         </header>
 
         <section>
-            <div id="story-all">
+            <div id="story-all" class="transfer" data-edenid="2">
                 <div class="story-panel story-panel1"></div>
                 <div class="story-panel story-panel2"></div>
 
@@ -368,7 +366,7 @@
             </div>
     </div>
 
-    <div id="actor-all">
+    <div id="actor-all" class="transfer" data-edenid="3">
         <div id="actor-bg" class="actor-bg"></div>
         <div id="eden-actor">
             <img src="img/actor-bg.jpg" alt="">
@@ -382,7 +380,7 @@
 
     </div>
 
-    <div id="staff-all">
+    <div id="staff-all" class="transfer" data-edenid="4">
         <div id="staff">
 
             <div class="staff0 staff-sec" data-staffid="0">
@@ -428,7 +426,8 @@
             <div class="staff4 staff-sec" data-staffid="4">
                     <div class="staffL staff-pL" data-staffid="4">
                             <p class="staff-p1">人物設定，作畫監督</p>
-                            <p class="staff-p2">ちこたむ、KIMちー</p>
+                            <p class="staff-p2">ちこたむ</p>
+                            <p class="staff-p2">KIMちー</p>
                         </div>
                     <div class="staffR staff-img" data-staffid="4">
                         <img src="img/staff4.JPG" alt="">
@@ -441,7 +440,9 @@
                 </div>
                 <div class="staffR staff-pR" data-staffid="5">
                     <p class="staff-p1"></p>
-                    <p class="staff-p2">sata、tsukune.、結城辰也</p>
+                    <p class="staff-p2">sata</p>
+                    <p class="staff-p2">tsukune.</p>
+                    <p class="staff-p2">結城辰也</p>
                 </div>
             </div>
 
@@ -509,13 +510,37 @@
         });
 
         //  連結
-        $(".li").click(function () {
-            console.log(111);
-
+        
+        $(".li1").click(function () {
             $('html, body').animate({
-                scrollTop: (1000)
+                scrollTop: $("#eden-header").offset().top
             }, 2000);
         });
+
+        $(".li2").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#story-all").offset().top
+            }, 2000);
+        });
+
+        $(".li3").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#actor-all").offset().top
+            }, 2000);
+        });
+
+        $(".li4").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#staff-all").offset().top
+            }, 2000);
+        });
+
+        $(".li5").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#story-all").offset().top
+            }, 2000);
+        });
+
     </script>
 
     <!-- story 點擊事件動畫效果 -->
