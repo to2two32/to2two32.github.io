@@ -238,25 +238,31 @@
         float: left;
         position: relative;
         padding: 30px 0;
+        margin-bottom: 100px;
+    }
+
+    .staff-sec P{
+        background: rgba(17, 17, 22, 0.8);
+        color: #fff;
+        padding: 2PX;
     }
 
     .staffL {
-        text-align: right;
-        float: left;
-        padding-right: 2%;
+        text-align: left;
+        float: right;
+        padding-right: 3%;
         width: 48%;
         position: relative;
     }
 
     .staffR {
-        text-align: left;
+        text-align: right;
         float: left;
         width: 48%;
         position: relative;
-        padding-left: 2%;
     }
 
-
+    /* 中間線 */
     #staff::before {
         position: absolute;
         width: 4px;
@@ -268,28 +274,39 @@
         height: 100%;
     }
 
-    #staff::after {
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        content: '';
+    .staffR.staff-img::before {
+        width: 60%;
+        right: -45%;
+        border-bottom: 5px dotted rgba(17, 17, 22, 0.3);
         position: absolute;
         top: 50%;
-        margin-top: -10px;
+        content: '';
+        z-index: -1;
+    }
+
+    .staffL.staff-img::before {
+        width: 60%;
+        left: -45%;
+        border-bottom: 5px dotted rgba(17, 17, 22, 0.3);
+        position: absolute;
+        top: 50%;
+        content: '';
+        z-index: -1
     }
 
     .staff-img img{
         max-width: 30%;
     }
 
-    .test {
-        width: 29%;
-        height: 0px;
-        border-bottom: 5px dotted rgba(17, 17, 22, 0.3);
-        position: absolute;
-        top: 50%;
-        content: '';
-        margin-top: -3px;
+    .staffR.staff-img{
+        margin-left: -20%;
     }
+
+    .staffL.staff-img{
+        margin-right: -20%;
+    }
+
+
 
     /* 商品資訊 */
     #commodity{
@@ -418,14 +435,22 @@
                     </div>
                 </div>
 
-            <div class="staff5 staff-sec">sata、tsukune.、結城辰也
-                <div class="staffL"></div>
-                <div class="staffR"></div>
+            <div class="staff5 staff-sec" data-staffid="5">
+                <div class="staffL staff-img" data-staffid="5">
+
+                </div>
+                <div class="staffR staff-pR" data-staffid="5">
+                    <p class="staff-p1"></p>
+                    <p class="staff-p2">sata、tsukune.、結城辰也</p>
+                </div>
             </div>
 
-            <div class="staff6 staff-sec">新海诚
-                <div class="staffR"></div>
-                <div class="staffL"></div>
+            <div class="staff6 staff-sec" data-staffid="6">
+                <div class="staffL staff-pL" data-staffid="6">
+                        <p class="staff-p1">感謝名單</p>
+                        <p class="staff-p2">新海诚</p>
+                </div>
+                <div class="staffR staff-img" data-staffid="6"></div>
             </div>
 
             <div class="cast1 cast-sec">間島淳司
@@ -530,14 +555,14 @@
         });
 
         $(".staff-pL").each(function() {
-        var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, right: "500px" });
+        var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, left: "1000px" });
         var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
             .setTween(tween)
             .addTo(controller);
         });
 
         $(".staff-pR").each(function() {
-        var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, left: "500px" });
+        var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, right: "1000px" });
         var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
             .setTween(tween)
             .addTo(controller);
