@@ -43,17 +43,35 @@
     }
 
 
+    #nav-ul{
+        width: 100%;
+        max-height: 100px;
+        top:0;
+        left: 0;
+        position:fixed;
+        z-index: 999;
+        background-color: black;  
+        display: none;
+    }
 
+    #nav-ul li{
+        line-height: 100px;
+        float: left;
+        margin: 0 5%;
+    }
+
+    .li1 img{
+        max-height: 100px;
+    }
     /* story-開始 */
     #eden-header {
         height: 100vh;
-        max-height: 900px;
         overflow: hidden;
     }
 
     ul {
         position: absolute;
-        right: 50px;
+        right: 20%;
         top: 200px;
         z-index: 10;
     }
@@ -73,18 +91,16 @@
         width: 300px;
         position: absolute;
         top: 20%;
-        left: 10%;
+        left: 20%;
         z-index: 11;
     }
 
     #eden-header {
-        max-width: 1440px;
         width: 100%;
         height: 100%;
         overflow: hidden;
-        margin: 0 auto;
+        
     }
-
 
     .header-panel {
         width: 100%;
@@ -109,8 +125,8 @@
     .swiper-container {
         position: absolute;
         width: 100%;
-        max-width: 1440px;
         height: 100%;
+        margin: 0 auto;
     }
 
     .swiper-slide {
@@ -119,7 +135,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     /* 故事介紹 */
@@ -305,8 +320,6 @@
         margin-right: -20%;
     }
 
-
-
     /* 商品資訊 */
     #commodity{
         height: 100vh;
@@ -318,6 +331,15 @@
 </style>
 
 <body>
+    <nav>
+        <ul id="nav-ul">
+            <li class="li1"><img src="img/logo.png" alt=""></li>
+            <li class="li2" data-eden="2">Story</li>
+            <li class="li3" data-eden="3">人物介紹</li>
+            <li class="li4" data-eden="4">商品資訊</li>
+            <li class="li5" data-eden="5">更多資訊</li>
+        </ul>
+    </nav>
     <div id="eden-all">
         <header id="eden-header" class="transfer" data-edenid="1">
             <div class="header-panel header-panel1"></div>
@@ -478,7 +500,7 @@
 
     </section>
     <footer>
-
+        <h1>2019課程練習使用</h1>
     </footer>
     </div>
 
@@ -487,6 +509,24 @@
 
     <!-- 首頁相關 -->
     <script>
+        //nav切換
+        $(window).scroll(function() {
+        var navshow = $(window).scrollTop();
+        /* nav切換時機 */
+        if (navshow >= 500) { 
+            $("#nav-ul").css("display","block");
+            navigation.addClass(stick);
+            returnTop.fadeIn();
+        } else {
+            $("#nav-ul").css("display","none");
+            navigation.addClass(unstick);
+            returnTop.fadeOut();
+        } 
+    }); 
+    
+    </script>
+
+    <script>
         //    首頁動畫
         let wipeAnimation = new TimelineMax();
         wipeAnimation.fromTo(".header-panel2", 1.8, { x: "-100%" }, { x: "100%", ease: Linear.easeNone })
@@ -494,7 +534,6 @@
             .from(".swiper-slide", 0.1, { opacity: 0 }, "+=0.4")
             .from(".menu li", 1, { opacity: 0, x: 100 }, "+=0.4")
             .from("#logo img", 1, { opacity: 0, x: -100 }, "+=0.4")
-
 
         // Swiper
         var swiper = new Swiper('.swiper-container', {
