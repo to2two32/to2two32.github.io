@@ -184,14 +184,16 @@
         animation-timing-function: ease-out;
     }
 
+    .story-p{
+        opacity: 0;
+    }
+
     .story-title p {
         text-align: left;
         font-size: 16pt;
-        opacity: 0;
         line-height: 24px;
         max-width: 600px;
         margin: 0 auto;
-
     }
 
     @keyframes title-box {
@@ -248,11 +250,11 @@
         top: 358%;
     }
 
-    .actor-img-01{
+    .actor-img-01 {
         display: block;
     }
 
-    .actor-img-02{
+    .actor-img-02 {
         display: none;
     }
 
@@ -343,39 +345,92 @@
         margin: 0 auto;
     }
 
-    .commodity-topL,.commodity-topR,.commodity-btmL,.commodity-btmR{
+    .commodity-topL,
+    .commodity-topR,
+    .commodity-btmL,
+    .commodity-btmR {
         float: left;
         width: 50%;
         padding: 5% 10% 0 10%;
     }
 
-    .commodity-topL img,.commodity-topR img{
+    .commodity-topL img,
+    .commodity-topR img {
         width: 80%;
     }
 
+ 
 
-    .commodity-btm p{
+    .commodity-btm p {
         font-size: 16px;
         line-height: 24px;
+        position: relative;
+        overflow: hidden;
+        display: block;
     }
 
-    footer{
+    .commodity-btm p::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+        transform: translateX(-101%);
+    }
+
+    .commodity-btm p::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+        transform: translateX(0);
+    }
+
+
+    @keyframes a-ltr-after {
+        0% {
+            transform: translateX(-100%)
+        }
+
+        100% {
+            transform: translateX(101%)
+        }
+    }
+
+    @keyframes a-ltr-before {
+        0% {
+            transform: translateX(0)
+        }
+
+        100% {
+            transform: translateX(200%)
+        }
+    }
+
+    footer {
         width: 100%;
         text-align: center;
         background: #000;
         color: #fff;
     }
+
     .box {
         width: 100%;
         height: 100px;
         background-color: #E9CC8F;
     }
 
-    hr{
+    hr {
         width: 80%;
         margin: 0 auto;
     }
-
 </style>
 
 <body>
@@ -426,13 +481,19 @@
                 <div id="eden-story">
                     <div class="story-title">
                         <H1>STORY</H1>
+                        <div class="story-p1 story-p">
                         <p>在地球遙遠的未來，由於火星附近出現巨大的能量體，使地球發生了各種變異，引發全球性的戰爭和恐怖主義，地球在毀滅性的打擊下離滅亡只剩下100年。</p>
+                        </div>
                         <br>
+                        <div class="story-p2 story-p">
                         <p> 為了趕在100年內離開地球，人類制定「地球脫出計劃」。為了實現這個計劃，建立「地球統一政府」以打壓異己和集中一切可利用資源；另一方面，為了解決人類智慧和肉體的局限性以保證計劃的延續性，又制定「地球脫出計劃」的核心「Felix計劃」——通過基因改造，獲得高智能的長生不老的生命體，即「Felix」。本作的女主角紫苑（一作sion）（シオン）即為其中一名Felix。
                         </p>
+                        </div>
                         <br>
-                        <p> 第99年，撤出行動完全結束後，原特殊部隊成員榛名亮被派往第703研究所，與紫苑邂逅。而亮的任務就是守護這個為「地球脫出計劃」奉獻一生的少女，以及限制她的自由。後來在地球毀滅的最後時間裡守護她前往死亡的樂園……
+                        <div class="story-p3 story-p">
+                        <p>第99年，撤出行動完全結束後，原特殊部隊成員榛名亮被派往第703研究所，與紫苑邂逅。而亮的任務就是守護這個為「地球脫出計劃」奉獻一生的少女，以及限制她的自由。後來在地球毀滅的最後時間裡守護她前往死亡的樂園……
                         </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -683,7 +744,7 @@
 
         $(".li5").click(function () {
             $('html, body').animate({
-                scrollTop: $("#story-all").offset().top
+                scrollTop: $("#commodity").offset().top
             }, 500);
         });
 
@@ -694,7 +755,9 @@
         $(".story-title H1").click(function () {
             $(".story-panel1").animate({ top: '30%', opacity: "0" });
             $(".story-panel2").animate({ top: '- 30%', opacity: "0" });
-            $(".story-title p").animate({ opacity: "1" });
+            $(".story-p1").animate({ opacity: "1" });
+            $(".story-p2").animate({ opacity: "1" });
+            $(".story-p3").animate({ opacity: "1" });
             $("#eden-story").css({ paddingTop: '50px' });
             $(".story-title").css({ animation: 'none' });
 
@@ -715,12 +778,12 @@
     <script>
         $(".actor").hover(function () {
             //先移除正在顯示的標籤
-            $( this ).children( '.actor-img-01' ).css("display", "none");
-            $( this ).children( '.actor-img-02' ).css("display", "block");
+            $(this).children('.actor-img-01').css("display", "none");
+            $(this).children('.actor-img-02').css("display", "block");
             //顯示相關內容
-        }, function(){
-            $( this ).children( '.actor-img-02' ).css("display", "none");
-            $( this ).children( '.actor-img-01' ).css("display", "block");
+        }, function () {
+            $(this).children('.actor-img-02').css("display", "none");
+            $(this).children('.actor-img-01').css("display", "block");
         });
     </script>
 
