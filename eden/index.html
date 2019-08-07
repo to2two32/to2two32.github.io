@@ -58,6 +58,7 @@
         line-height: 100px;
         float: left;
         margin: 0 5%;
+        display: flex;
     }
 
     .li1 img {
@@ -78,8 +79,6 @@
     }
 
     li {
-        width: auto;
-        height: auto;
         list-style-type: none;
         font-size: 36px;
         color: #fff;
@@ -306,8 +305,8 @@
     }
 
     .staffR.staff-img::before {
-        width: 60%;
-        right: -45%;
+        width: 40%;
+        right: -29%;
         border-bottom: 5px dotted rgba(17, 17, 22, 0.3);
         position: absolute;
         top: 50%;
@@ -316,8 +315,8 @@
     }
 
     .staffL.staff-img::before {
-        width: 60%;
-        left: -45%;
+        width: 40%;
+        left: -29%;
         border-bottom: 5px dotted rgba(17, 17, 22, 0.3);
         position: absolute;
         top: 50%;
@@ -330,20 +329,32 @@
     }
 
     .staffR.staff-img {
-        margin-left: -20%;
+        margin-left: -12%;
     }
 
     .staffL.staff-img {
-        margin-right: -20%;
+        margin-right: -12%;
     }
 
     /* 商品資訊 */
     #commodity {
         height: 100vh;
         max-width: 1200px;
-        background-color: #F3AE9C;
         margin: 0 auto;
     }
+
+    .commodity-topL,.commodity-topR,.commodity-btmL,.commodity-btmR{
+        float: left;
+        width: 50%;
+        padding: 5% 10% 0 10%;
+    }
+
+    .commodity-topL img,.commodity-topR img{
+        width: 80%;
+    }
+
+
+
     footer{
         width: 100%;
         text-align: center;
@@ -386,8 +397,8 @@
                             <li class="li1" data-eden="1">eden*</li>
                             <li class="li2" data-eden="2">Story</li>
                             <li class="li3" data-eden="3">人物介紹</li>
-                            <li class="li4" data-eden="4">商品資訊</li>
-                            <li class="li5" data-eden="5">更多資訊</li>
+                            <li class="li4" data-eden="4">製作名單</li>
+                            <li class="li5" data-eden="5">遊戲資訊</li>
                         </ul>
                     </div>
                     <div class="swiper-slide">
@@ -530,7 +541,9 @@
                     <p class="staff-p1">感謝名單</p>
                     <p class="staff-p2">新海诚</p>
                 </div>
-                <div class="staffR staff-img" data-staffid="6"></div>
+                <div class="staffR staff-img" data-staffid="6">
+                    <img src="img/staff6.JPG" alt="">
+                </div>
             </div>
 
             <div class="cast1 cast-sec">間島淳司
@@ -551,7 +564,43 @@
     </div>
     <div id="commodity-all">
         <div id="commodity">
-
+            <div class="commodity-top">
+                <div class="commodity-topL">
+                    <img src="img/eden.jpg" alt="">
+                </div>
+                <div class="commodity-topR">
+                    <img src="img/plus.jpg" alt="">
+                </div>
+            </div>
+            <div class="commodity-btm">
+                <div class="commodity-btmL">
+                    <H3>eden*</H3>
+                    <P>
+                        Price: $19.95<br>
+                        Release Date: January 30th, 2015<br>
+                        Developer: minori<br>
+                        Genre: Kinetic Novel<br>
+                        Format: Download<br>
+                        Audio: Fully Voiced (Japanese)<br>
+                        Text: English<br>
+                        Platform: PC (Windows XP, Vista, 7, 8)
+                    </P>
+                </div>
+                <div class="commodity-btmR">
+                    <H3>eden* PLUS+MOSAIC</H3>
+                    <P>
+                        Price: $24.95<br>
+                        Release Date: January 30th, 2015<br>
+                        Developer: minori<br>
+                        Genre: Kinetic Novel<br>
+                        Format: Download<br>
+                        Audio: Fully Voiced (Japanese)<br>
+                        Text: English<br>
+                        Graphics: Mosaic Censorship<br>
+                        Platform: PC (Windows XP, Vista, 7, 8
+                    </P>
+                </div>
+            </div>
         </div>
     </div>
 

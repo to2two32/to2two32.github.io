@@ -1,49 +1,69 @@
-<script>
-/* Variable initialisation */
-var classeDuLienSDmooth = "a.lienSmooth";
-var dureeDuSmooth = 800; 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
 
-var navHeight = $("nav ul").height();
-var hauteurFenetre = $(window).height();
-var hauteurDocument = $(document).height();
-var navigation = $("nav#top ul"); 
-var navOffsetTop = $("nav#top ul").offset().top;
-var returnTop = $("#returntop");
+/* title styles */
+.home-title span{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 1.2;
+}
 
-var stick = "stick";
-var unstick = "unstick";
-var active = "active";
+.home-title span::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(-101%);
+}
 
-/* SmoothScroll */
+.home-title span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(0);
+}
 
-$(window).scroll(function() {
-  var scrollPosition = $(window).scrollTop();
-  /* Sticky menu */
-  if (scrollPosition >= navOffsetTop) { 
-    navigation.removeClass(unstick);
-    navigation.addClass(stick);
-    returnTop.fadeIn();
-  } 
-  else {
-    navigation.removeClass(stick);
-    navigation.addClass(unstick);
-    returnTop.fadeOut();
-  } 
- 
-  $(".ancre").each(function(){
-    var ancrePositionId = "#"+$(this).attr("id");
-    var ancrePosition = $(ancrePositionId).offset().top;
-    if(scrollPosition >= (ancrePosition - navHeight)) {
-      $("#top li a").removeClass(active); 
-      $("a[href=\""+ancrePositionId+"\"]").addClass(active)
-    }
-    else if ((scrollPosition+hauteurFenetre) == hauteurDocument){
-      $("#top li a").removeClass(active); 
-      $("a[href=\""+ancrePositionId+"\"]").addClass(active)      
-    }
-    else {
-      $("a[href=\""+ancrePositionId+"\"]").removeClass(active); 
-    }
-  }); 
-});
-</script>
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after{
+    animation-delay: 1s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after{
+    animation-delay: 1.5s;
+}
+
+@keyframes a-ltr-after{
+    0% {transform: translateX(-100%)}
+    100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+    0% {transform: translateX(0)}
+    100% {transform: translateX(200%)}
+}
+  </style>
+</head>
+<body>
+    <h1 class="home-title">
+        <span>Simple text reveal with css</span>
+        <span>using pseudo elements</span>
+      </h1>
+</body>
+</html>
