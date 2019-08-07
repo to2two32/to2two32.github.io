@@ -190,7 +190,7 @@
         font-size: 16pt;
         opacity: 0;
         line-height: 24px;
-        max-width: 450px;
+        max-width: 600px;
         margin: 0 auto;
 
     }
@@ -669,8 +669,21 @@
             $( this ).children( '.actor-img-01' ).css("display", "block");
         });
     </script>
-    <!-- 製作人員圖片動畫 -->
 
+    <!-- 測試用 -->
+    <!-- <script>
+            $(".actor img").hover(function () {
+                //先移除正在顯示的標籤
+                $( this ).css("display", "none");
+                $( this ).closest( '.actor-img-02' ).css("display", "block");
+                //顯示相關內容
+            }, function(){
+                $( this ).closest('.actor-img-02').css("display", "none");
+                $( this ).css("display", "block");
+            });
+        </script> -->
+
+    <!-- 製作人員圖片動畫 -->
     <script>
         var controller = new ScrollMagic.Controller();
 
