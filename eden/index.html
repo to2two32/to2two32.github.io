@@ -23,7 +23,7 @@
     html {
         box-sizing: border-box;
         overflow-x: hidden;
-        background-color: rgba(223, 163, 41, 0.3);
+        background-color: #E9CC8F;
     }
 
     H1 {
@@ -43,26 +43,27 @@
     }
 
 
-    #nav-ul{
+    #nav-ul {
         width: 100%;
         max-height: 100px;
-        top:0;
+        top: 0;
         left: 0;
-        position:fixed;
+        position: fixed;
         z-index: 999;
-        background-color: black;  
+        background-color: black;
         display: none;
     }
 
-    #nav-ul li{
+    #nav-ul li {
         line-height: 100px;
         float: left;
         margin: 0 5%;
     }
 
-    .li1 img{
+    .li1 img {
         max-height: 100px;
     }
+
     /* story-開始 */
     #eden-header {
         height: 100vh;
@@ -99,7 +100,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        
+
     }
 
     .header-panel {
@@ -240,18 +241,26 @@
 
     .actor-bg-move {
         transform: translateY(-910px);
-        
     }
 
-    .actor img{
+    .actor img {
         max-width: 30%;
         position: absolute;
-        top: 330%
+        top: 358%;
+    }
+
+    .actor-img-01{
+        display: block;
+    }
+
+    .actor-img-02{
+        display: none;
     }
 
     /* 工作人員 */
     #staff {
         position: relative;
+        background-color: #E9CC8F;
     }
 
     .staff-sec {
@@ -263,7 +272,7 @@
         margin-bottom: 100px;
     }
 
-    .staff-sec P{
+    .staff-sec P {
         background: rgba(17, 17, 22, 0.8);
         color: #fff;
         padding: 2PX;
@@ -316,26 +325,41 @@
         z-index: -1
     }
 
-    .staff-img img{
+    .staff-img img {
         max-width: 30%;
     }
 
-    .staffR.staff-img{
+    .staffR.staff-img {
         margin-left: -20%;
     }
 
-    .staffL.staff-img{
+    .staffL.staff-img {
         margin-right: -20%;
     }
 
     /* 商品資訊 */
-    #commodity{
+    #commodity {
         height: 100vh;
         max-width: 1200px;
         background-color: #F3AE9C;
         margin: 0 auto;
     }
+    footer{
+        width: 100%;
+        text-align: center;
+        background: #000;
+        color: #fff;
+    }
+    .box {
+        width: 100%;
+        height: 100px;
+        background-color: #E9CC8F;
+    }
 
+    hr{
+        width: 80%;
+        margin: 0 auto;
+    }
 </style>
 
 <body>
@@ -398,38 +422,46 @@
             </div>
     </div>
 
+    <div class="box"></div>
+    <hr>
+    <div class="box"></div>
+
     <div id="actor-all" class="transfer" data-edenid="3">
         <div id="actor-bg" class="actor-bg"></div>
         <div id="eden-actor">
-            <img src="img/actor-bg.jpg" alt="">
+            <img class="actor-bg-img" src="img/actor-bg.jpg" alt="">
             <div class="actor">
-                <img src="img/actor1.png" alt="" style="left: 35%">
-                <img src="img/actor1-2.png" alt="" style="left: 35%">
+                <img class="actor-img-01" src="img/actor1.png" alt="" style="left: 38%">
+                <img class="actor-img-02" src="img/actor1-2.png" alt="" style="left: 38%">
             </div>
             <div class="actor">
-                <img src="img/actor2.png" alt="" style="left: 15%">
-                <img src="img/actor2-2.png" alt="">
+                <img class="actor-img-01" src="img/actor2.png" alt="" style="left: 15%">
+                <img class="actor-img-02" src="img/actor2-2.png" alt="">
             </div>
             <div class="actor">
-                <img src="img/actor3.png" alt="" style="left: 18%">
-                <img src="img/actor3-2.png" alt="" style="left: 18%">
+                <img class="actor-img-01" src="img/actor3.png" alt="" style="left: 18%">
+                <img class="actor-img-02" src="img/actor3-2.png" alt="" style="left: 18%">
             </div>
             <div class="actor">
-                <img src="img/actor4.png" alt="" style="left: 50%">
-                <img src="img/actor4-2.png" alt="" style="left: 50%">
+                <img class="actor-img-01" src="img/actor4.png" alt="" style="left: 55%">
+                <img class="actor-img-02" src="img/actor4-2.png" alt="" style="left: 55%">
             </div>
             <div class="actor">
-                <img src="img/actor5.png" alt="">
-                <img src="img/actor5-2.png" alt="">
+                <img class="actor-img-01" src="img/actor5.png" alt="">
+                <img class="actor-img-02" src="img/actor5-2.png" alt="">
             </div>
         </div>
 
 
     </div>
 
-    <div id="staff-all" class="transfer" data-edenid="4">
-        <div id="staff">
+    <div class="box"></div>
+    <hr>
+    <div class="box"></div>
 
+    <div id="staff-all" class="transfer" data-edenid="4">
+        <div class="actor-none"></div>
+        <div id="staff">
             <div class="staff0 staff-sec" data-staffid="0">
                 <div class="staffL staff-pL" data-staffid="0">
                     <p class="staff-p1">製作公司</p>
@@ -471,15 +503,15 @@
             </div>
 
             <div class="staff4 staff-sec" data-staffid="4">
-                    <div class="staffL staff-pL" data-staffid="4">
-                            <p class="staff-p1">人物設定，作畫監督</p>
-                            <p class="staff-p2">ちこたむ</p>
-                            <p class="staff-p2">KIMちー</p>
-                        </div>
-                    <div class="staffR staff-img" data-staffid="4">
-                        <img src="img/staff4.JPG" alt="">
-                    </div>
+                <div class="staffL staff-pL" data-staffid="4">
+                    <p class="staff-p1">人物設定，作畫監督</p>
+                    <p class="staff-p2">ちこたむ</p>
+                    <p class="staff-p2">KIMちー</p>
                 </div>
+                <div class="staffR staff-img" data-staffid="4">
+                    <img src="img/staff4.JPG" alt="">
+                </div>
+            </div>
 
             <div class="staff5 staff-sec" data-staffid="5">
                 <div class="staffL staff-img" data-staffid="5">
@@ -495,8 +527,8 @@
 
             <div class="staff6 staff-sec" data-staffid="6">
                 <div class="staffL staff-pL" data-staffid="6">
-                        <p class="staff-p1">感謝名單</p>
-                        <p class="staff-p2">新海诚</p>
+                    <p class="staff-p1">感謝名單</p>
+                    <p class="staff-p2">新海诚</p>
                 </div>
                 <div class="staffR staff-img" data-staffid="6"></div>
             </div>
@@ -517,11 +549,11 @@
 
         </div>
     </div>
-        <div id="commodity-all">
-            <div id="commodity">
+    <div id="commodity-all">
+        <div id="commodity">
 
-            </div>
         </div>
+    </div>
 
     </section>
     <footer>
@@ -535,20 +567,16 @@
     <!-- 首頁相關 -->
     <script>
         //nav切換
-        $(window).scroll(function() {
-        var navshow = $(window).scrollTop();
-        /* nav切換時機 */
-        if (navshow >= 500) { 
-            $("#nav-ul").css("display","block");
-            navigation.addClass(stick);
-            returnTop.fadeIn();
-        } else {
-            $("#nav-ul").css("display","none");
-            navigation.addClass(unstick);
-            returnTop.fadeOut();
-        } 
-    }); 
-    
+        $(window).scroll(function () {
+            var navshow = $(window).scrollTop();
+            /* nav切換時機 */
+            if (navshow >= 500) {
+                $("#nav-ul").css("display", "block");
+            } else {
+                $("#nav-ul").css("display", "none");
+            }
+        });
+
     </script>
 
     <script>
@@ -574,7 +602,7 @@
         });
 
         //  連結
-        
+
         $(".li1").click(function () {
             $('html, body').animate({
                 scrollTop: $("#eden-header").offset().top
@@ -629,32 +657,42 @@
             .addTo(controller);
     </script>
 
-    <!-- STORY文字動畫效果 -->
-
+    <!-- 角色HOVER效果 -->
+    <script>
+        $(".actor").hover(function () {
+            //先移除正在顯示的標籤
+            $( this ).children( '.actor-img-01' ).css("display", "none");
+            $( this ).children( '.actor-img-02' ).css("display", "block");
+            //顯示相關內容
+        }, function(){
+            $( this ).children( '.actor-img-02' ).css("display", "none");
+            $( this ).children( '.actor-img-01' ).css("display", "block");
+        });
+    </script>
     <!-- 製作人員圖片動畫 -->
 
     <script>
         var controller = new ScrollMagic.Controller();
 
-        $(".staff-img").each(function() {
-        var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, scale: 0.5 });
-        var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
-            .setTween(tween)
-            .addTo(controller);
+        $(".staff-img").each(function () {
+            var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, scale: 0.5 });
+            var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
+                .setTween(tween)
+                .addTo(controller);
         });
 
-        $(".staff-pL").each(function() {
-        var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, left: "1000px" });
-        var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
-            .setTween(tween)
-            .addTo(controller);
+        $(".staff-pL").each(function () {
+            var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, left: "1000px" });
+            var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
+                .setTween(tween)
+                .addTo(controller);
         });
 
-        $(".staff-pR").each(function() {
-        var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, right: "1000px" });
-        var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
-            .setTween(tween)
-            .addTo(controller);
+        $(".staff-pR").each(function () {
+            var tween = TweenMax.from($(this), 0.5, { autoAlpha: 0, right: "1000px" });
+            var scene = new ScrollMagic.Scene({ triggerElement: this, duration: 300, triggerHook: "0.7" })
+                .setTween(tween)
+                .addTo(controller);
         });
     </script>
 
